@@ -1,3 +1,4 @@
+use std::net::SocketAddr;
 use std::net::UdpSocket;
 use std::time::Duration;
 use std::time::Instant;
@@ -68,7 +69,7 @@ fn main() -> std::io::Result<()>{
         let socket = UdpSocket::bind("0.0.0.0:0")?;
         socket.set_write_timeout(Some(Duration::from_secs(1)))?;
         x+=1;
-        let target = "127.0.0.1:4567";
+        let addr = SocketAddr::from(([10, 10, 73, 3], 9990));
         let mut tags: Vec<Tag> = Vec::new();
         for i in 0..13 {
             tags.push(Tag {
@@ -84,9 +85,9 @@ fn main() -> std::io::Result<()>{
         print_tags(&tags);
 
         let message = serialize_tags(tags);
-        socket.send_to(&message, target)?;
+        socket.send_to(&message, addr)?;
 
-        println!("Sent message to {}", target);
+        println!("Sent message to {:?}", addr);
         std::thread::sleep(Duration::from_secs(1));
     }
     Ok(())
