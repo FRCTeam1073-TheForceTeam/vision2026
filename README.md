@@ -8,3 +8,6 @@ ReefScape Example Field JSON:<br>
 https://github.com/wpilibsuite/allwpilib/blob/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag/2025-reefscape-welded.json<br>
 Quaternion Info:<br>
 https://danceswithcode.net/engineeringnotes/quaternions/quaternions.html<br>
+OpenCV tutorial:<br>
+https://www.opencv-srf.com/p/introduction.html<br>
+
