@@ -1,9 +1,9 @@
 #include <chrono>
 #include <thread>
-#include <format>
 #include <networktables/NetworkTableInstance.h>
 #include <networktables/NetworkTable.h>
 #include <networktables/DoubleTopic.h>
+#include <iostream>
 
 int main() {
   auto inst = nt::NetworkTableInstance::GetDefault();
@@ -18,6 +18,8 @@ int main() {
     std::this_thread::sleep_for(1s);
     double x = xSub.Get();
     double y = ySub.Get();
-    fmt::print("X: {} Y: {}\n", x, y);
+
+    std::cout << "X: " << x << " Y: " << y << std::endl;
+
   }
 }
