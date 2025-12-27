@@ -1,5 +1,5 @@
 Installed standard packages:
-    libeigen3-dev python3-dev libopencv-dev git build-essential cmake emacs iperf3 screen
+    libeigen3-dev python3-dev libopencv-dev git build-essential cmake emacs iperf3 screen libboost-all-dev
 
 Built and installed realsense dependencies:
     Did newest non-beta SDK for realsense.
